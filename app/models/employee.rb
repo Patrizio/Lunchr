@@ -7,4 +7,8 @@ class Employee < ActiveRecord::Base
   validates :employee_id, :presence => true
   validates_length_of :employee_id, :is => 5,
   
+  def fullname
+    "#{firstname} #{lastname}"
+  end
+  
 end
