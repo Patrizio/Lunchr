@@ -12,7 +12,7 @@
 <% @lunch_lists.each do |lunch_list| %>
   <tr>
     <td><%= lunch_list.employee_id %></td>
-    <td><%= lunch_list.given_lunches_id %></td>
+    <td><%= lunch_list.given_lunch_id %></td>
     <td><%= link_to 'Show', lunch_list %></td>
     <td><%= link_to 'Edit', edit_lunch_list_path(lunch_list) %></td>
     <td><%= link_to 'Destroy', lunch_list, :confirm => 'Are you sure?', :method => :delete %></td>
