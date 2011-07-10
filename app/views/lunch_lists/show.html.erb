@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Employee:</b>
+  <%= @lunch_list.employee_id %>
+</p>
+
+<p>
+  <b>Given lunches:</b>
+  <%= @lunch_list.given_lunches_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_lunch_list_path(@lunch_list) %> |
+<%= link_to 'Back', lunch_lists_path %>

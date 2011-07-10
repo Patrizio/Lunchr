@@ -1,4 +1,6 @@
 Lunch::Application.routes.draw do
+  resources :lunch_lists
+
   resources :given_lunches
 
   resources :employees
