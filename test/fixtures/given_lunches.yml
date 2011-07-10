@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date_of_lunch: 2011-07-10
+  price: 9.99
+
+two:
+  date_of_lunch: 2011-07-10
+  price: 9.99

@@ -1,4 +1,6 @@
 Lunch::Application.routes.draw do
+  resources :given_lunches
+
   resources :employees
 
   # The priority is based upon order of creation:
