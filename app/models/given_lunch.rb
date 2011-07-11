@@ -4,4 +4,6 @@ class GivenLunch < ActiveRecord::Base
   
   validates :date_of_lunch, :presence => true
   validates :price, :presence => true
+  validates_uniqueness_of :date_of_lunch 
+  
 end
