@@ -13,9 +13,8 @@
 
   <div class="field">
     <%= f.label :date_of_lunch %><br />
-    <%= f.date_select :date_of_lunch %>
-	<div class="turn-me-into-datepicker" />
-
+	<div class="turn-me-into-datepicker"></div>
+  	<%= f.hidden_field 'date_of_lunch' %>	
   </div>
   <div class="field">
     <%= f.label :price %><br />

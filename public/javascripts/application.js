@@ -4,6 +4,12 @@
 $(function()
 {
 	$('.turn-me-into-datepicker')
-		.datePicker({dateFormat: 'yy-mm-dd',inline:true})
-		
+		.datePicker({inline:true, dateFormat: 'yy-mm-dd'})
+		.bind(
+			'dateSelected',
+			function(e, selectedDate, $td)
+			{
+				$('#given_lunch_date_of_lunch').val(selectedDate.asString());
+			}
+		);
 });
