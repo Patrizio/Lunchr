@@ -9,6 +9,15 @@ class EmployeesController < ApplicationController
       format.xml  { render :xml => @employees }
     end
   end
+  
+  def overview
+    @employees = Employee.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @employees }
+    end
+  end
 
   # GET /employees/1
   # GET /employees/1.xml

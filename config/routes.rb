@@ -1,9 +1,12 @@
 Lunch::Application.routes.draw do
-  resources :lunch_lists
-
-  resources :given_lunches
-
-  resources :employees
+  
+  resources :employees do
+    get :overview, :on => :collection
+  end
+  
+  resources :lunch_lists, :given_lunches, :employees
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
