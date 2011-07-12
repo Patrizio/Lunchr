@@ -12,6 +12,7 @@ class EmployeesController < ApplicationController
   
   def overview
     @employees = Employee.all
+    @employees_by_lastname = @employees.group_by { |t| t.lastname[0] }
 
     respond_to do |format|
       format.html # index.html.erb
