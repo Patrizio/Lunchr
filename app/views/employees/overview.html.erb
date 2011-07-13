@@ -1,12 +1,11 @@
+
 <h1>Medewerkers Overzicht</h1>
-
-
 
 <table>
 <% @employees_by_lastname.keys.sort.each do |letter| %>  
 	<tr><td><h2><%= letter %></h2> </td></tr>
   <% for employee in @employees_by_lastname[letter] %>  
-    <tr><td><%= employee.lastname %>, <%= employee.firstname %></td></tr>
+    <tr><td><%= link_to employee.fullname, register_lunch_employee_path(employee) %></td></tr>
   <% end %>  
 <% end %>
 

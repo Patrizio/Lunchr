@@ -9,16 +9,6 @@ class EmployeesController < ApplicationController
       format.xml  { render :xml => @employees }
     end
   end
-  
-  def overview
-    @employees = Employee.all
-    @employees_by_lastname = @employees.group_by { |t| t.lastname[0] }
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @employees }
-    end
-  end
 
   # GET /employees/1
   # GET /employees/1.xml
@@ -90,4 +80,36 @@ class EmployeesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def overview
+    @employees = Employee.all
+    @employees_by_lastname = @employees.group_by { |t| t.lastname[0] }
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @employees }
+    end
+  end
+  
+  def register_lunch
+    @employee = Employee.find(params[:id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @employees }
+    end
+  end
+  
+  def create_lunch
+    
+    
+    params[:lunch_ids].each do |new_lunch| 
+       lunch = LunchList.new 
+       lunch.employee_id = params[:id]
+       lunch.given_lunch_id = new_lunch
+       lunch.save 
+       
+    end
+    
+  end
+  
 end

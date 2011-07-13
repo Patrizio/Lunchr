@@ -1,0 +1,19 @@
+
+<h1>Werk je lunches bij...</h1>
+
+<%= @employee.fullname %>
+
+<% @lunches = GivenLunch.all %>
+
+<% form_tag create_lunch_employee_path, :method => :put do %>
+	<table>
+		<% @lunches.each do |lunch| %>  
+		    <tr>
+				<td><%= check_box_tag "lunch_ids[]", lunch.id  %></td>
+				<td><%= lunch.date_of_lunch %></td>
+			</tr>
+		<% end %>
+	</table>
+	<p><%= submit_tag "Edit checked" %></p>
+<% end %>
+<%= debug @lunches %> 

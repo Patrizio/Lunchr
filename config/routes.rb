@@ -2,7 +2,10 @@ Lunch::Application.routes.draw do
   
   resources :employees do
     get :overview, :on => :collection
+    get :register_lunch, :on => :member
+    put :create_lunch, :on => :member   
   end
+
   
   resources :lunch_lists, :given_lunches, :employees
   
