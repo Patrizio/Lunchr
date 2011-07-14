@@ -1,5 +1,7 @@
 Lunch::Application.routes.draw do
   
+  root :to => 'pages#home'
+	
   resources :employees do
     get :overview, :on => :collection
     get :register_lunch, :on => :member

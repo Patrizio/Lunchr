@@ -11,7 +11,7 @@ class Employee < ActiveRecord::Base
   validates_uniqueness_of :employee_id
   
   def fullname
-    "#{firstname} #{lastname}"
+    "#{lastname}, #{firstname} "
   end
   
 end
