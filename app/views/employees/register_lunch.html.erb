@@ -5,15 +5,19 @@
 
 <% @lunches = GivenLunch.all %>
 
+<% day_of_week = %w{maandag dinsdag woensdag donderdag vrijdag zaterdag zondag} %>
+
 <% form_tag create_lunch_employee_path, :method => :put do %>
-	<table>
+	<div>
 		<% @lunches.each do |lunch| %>  
-		    <tr>
-				<td><%= check_box_tag "lunch_ids[]", lunch.id  %></td>
-				<td><%= lunch.date_of_lunch %></td>
-			</tr>
+		    
+			<%= day_of_week %>
+			
+		    	<%= check_box_tag "lunch_ids[]", lunch.id  %>
+				<%= lunch.date_of_lunch %>
+			
 		<% end %>
-	</table>
+
 	<p><%= submit_tag "Edit checked" %></p>
 <% end %>
-<%= debug @lunches %> 
+
