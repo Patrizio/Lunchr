@@ -3,16 +3,21 @@
 
 <%= @employee.fullname %>
 
-<% @lunches = GivenLunch.all %>
+<% @lunches = GivenLunch.lunches_this_week %>
 
-<% day_of_week = %w{maandag dinsdag woensdag donderdag vrijdag zaterdag zondag} %>
+<% day_of_week = %w{zondag maandag dinsdag woensdag donderdag vrijdag zaterdag} %>
+
+<% 
+  today = Time.new
+  start_week = today.at_beginning_of_week.strftime('%F')
+  end_week = today.at_end_of_week.strftime('%F')
+
+%>
+<%= "Start week: #{start_week}, Einde week: #{end_week}" %>
 
 <% form_tag create_lunch_employee_path, :method => :put do %>
 	<div>
-		<% @lunches.each do |lunch| %>  
-		    
-			<%= day_of_week %>
-			
+		<% @lunches.each do |lunch| %>			
 		    	<%= check_box_tag "lunch_ids[]", lunch.id  %>
 				<%= lunch.date_of_lunch %>
 			

@@ -100,16 +100,12 @@ class EmployeesController < ApplicationController
   end
   
   def create_lunch
-    
-    
     params[:lunch_ids].each do |new_lunch| 
        lunch = LunchList.new 
        lunch.employee_id = params[:id]
        lunch.given_lunch_id = new_lunch
        lunch.save 
-       
-    end
-    
-  end
+    end 
+  end  
   
 end
