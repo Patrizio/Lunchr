@@ -3,17 +3,9 @@
 
 <%= @employee.fullname %>
 
-<% @lunches = GivenLunch.lunches_this_week %>
+<% @lunches = GivenLunch.this_week %>
 
 <% day_of_week = %w{zondag maandag dinsdag woensdag donderdag vrijdag zaterdag} %>
-
-<% 
-  today = Time.new
-  start_week = today.at_beginning_of_week.strftime('%F')
-  end_week = today.at_end_of_week.strftime('%F')
-
-%>
-<%= "Start week: #{start_week}, Einde week: #{end_week}" %>
 
 <% form_tag create_lunch_employee_path, :method => :put do %>
 	<div>
