@@ -32,4 +32,5 @@ gem 'jquery-rails'
 group :development, :test do
 	gem 'webrat'
 	gem 'factory_girl_rails'
+	gem "rspec-rails", "~> 2.6"
 end
