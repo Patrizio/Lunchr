@@ -1,12 +1,11 @@
 
-<h1>Medewerkers Overzicht</h1>
+<h1>Stayokay medewerkers</h1>
 
-<table>
 <% @employees_by_lastname.keys.sort.each do |letter| %>  
-	<tr><td><h2><%= letter %></h2> </td></tr>
+
   <% for employee in @employees_by_lastname[letter] %>  
-    <tr><td><%= link_to employee.fullname, register_lunch_employee_path(employee) %></td></tr>
+    <div style="background: lightyellow; height: 40px;">
+		<%= link_to employee.fullname, register_lunch_employee_path(employee) %>
+	</div>
   <% end %>  
 <% end %>
-
-</table>
