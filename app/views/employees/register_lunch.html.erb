@@ -5,14 +5,21 @@
 
 <% @lunches = GivenLunch.this_week %>
 
+<% today = Time.now.strftime("%F") %>
+
 <% day_of_week = %w{zondag maandag dinsdag woensdag donderdag vrijdag zaterdag} %>
 
 <% form_tag create_lunch_employee_path, :method => :put do %>
 	<div>
 		<% @lunches.each do |lunch| %>			
-		    	<%= check_box_tag "lunch_ids[]", lunch.id  %>
-				<%= lunch.date_of_lunch %>
-			
+		   		<%= check_box_tag "lunch_ids[]", lunch.id  %>
+				<% if lunch.date_of_lunch.to_s == today %>
+					<strong>
+					<%= lunch.date_of_lunch  %>
+					</strong>
+				<% else %>
+					<%= lunch.date_of_lunch  %>
+				<% end %>
 		<% end %>
 
 	<p><%= submit_tag "Edit checked" %></p>
