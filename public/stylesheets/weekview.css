@@ -1,0 +1,17 @@
+ul#display-inline-block,
+ul#display-inline-block li {
+	/* Setting a common base */
+	margin: 0;
+	padding: 0;
+}
+
+ul#display-inline-block li {
+	display: inline-block;
+	width: 100px;
+	min-height: 100px;
+	background: #ccc;
+}
+
+.highlight {
+	background: lightyellow;
+}

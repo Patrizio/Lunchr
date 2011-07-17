@@ -1,26 +1,27 @@
 
 
 <h1><%= @employee.fullname %></h1>
-<p>Selecteer je lunch:</p>
+<p>Selecteer je lunches...</p>
 
 
 <% @lunches = GivenLunch.this_week %>
+
 <% today = Time.now.strftime("%F") %>
-<% day_of_week = %w{zondag maandag dinsdag woensdag donderdag vrijdag zaterdag} %>
+
+<% days_of_week = %w{maandag dinsdag woensdag donderdag vrijdag zaterdag zondag} %>
 
 <% form_tag create_lunch_employee_path, :method => :put do %>
-	<div>
+	<ul id="display-inline-block">
 		<% @lunches.each do |lunch| %>			
-		   		<%= check_box_tag "lunch_ids[]", lunch.id  %>
-				<% if lunch.date_of_lunch.to_s == today %>
-					<strong>
-					<%= lunch.date_of_lunch  %>
-					</strong>
-				<% else %>
-					<%= lunch.date_of_lunch  %>
-				<% end %>
+			<li class="day">
+				<strong><%= lunch.date_of_lunch.strftime("%A")  %></strong>
+				<br />
+				<%= lunch.date_of_lunch.strftime("%e %B, %G")  %>
+				<br />
+				<%= check_box_tag "lunch_ids[]", lunch.id  %>
+			</li>
+				
 		<% end %>
-
+	</ul>
 	<p><%= submit_tag "Edit checked" %></p>
 <% end %>
-
