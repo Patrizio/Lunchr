@@ -10,8 +10,13 @@ $(document).ready(function() {
 			$(this).parent().parent().css('background-color', 'lightyellow');
 	        return;
 	    }
-	    //Here do the stuff you want to do when 'unchecked'
-		$(this).parent().parent().css('background-color', 'lightgrey');
+	    if ($(this).parent().parent().hasClass("today")) {
+			// Uncheck today's day => lightblue
+			$(this).parent().parent().css('background-color', 'lightblue');
+		} else {
+			// Uncheck any other day => lightgrey
+			$(this).parent().parent().css('background-color', 'lightgrey');
+		}
 	});
 	
 	$(function()
