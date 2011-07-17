@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @employee.fullname %></h1>
+<table>
+<% @lunches_per_month.each do |month, lunches| %>
+	<tr><td><h2><%= month %></h2></td></tr>
+  	<tr>
+	    <th>Date of lunch</th>
+	    <th>Price</th>    
+	  </tr>
+	<% lunches.each do |given_lunch| %>
+	  <tr>
+	    <td><%= given_lunch.date_of_lunch.strftime("%A, %e %B") %></td>
+	    <td><%= given_lunch.price %></td>
+	  </tr>
+	<% end %>
+	<tr><td>This month: <%= lunches.length %> lunches</td></tr>
+<% end %>
+</table>
