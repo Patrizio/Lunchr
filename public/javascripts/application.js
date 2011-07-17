@@ -7,11 +7,11 @@ $(document).ready(function() {
   	$('input').change(function () {
 	    if ($(this).attr("checked")) {
 	        //do the stuff that you would do when 'checked'
-			$(this).parent().css('background-color', 'lightyellow');
+			$(this).parent().parent().css('background-color', 'lightyellow');
 	        return;
 	    }
 	    //Here do the stuff you want to do when 'unchecked'
-		$(this).parent().css('background-color', 'lightgrey');
+		$(this).parent().parent().css('background-color', 'lightgrey');
 	});
 	
 	$(function()

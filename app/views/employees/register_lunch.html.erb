@@ -17,8 +17,8 @@
 				<strong><%= lunch.date_of_lunch.strftime("%A")  %></strong>
 				<br />
 				<%= lunch.date_of_lunch.strftime("%e %B, %G")  %>
-				<br />
-				<%= check_box_tag "lunch_ids[]", lunch.id  %>
+				<br /><br />
+				<div style="text-align: center;"><%= check_box_tag "lunch_ids[]", lunch.id  %></div>
 			</li>
 				
 		<% end %>
