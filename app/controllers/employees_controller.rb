@@ -100,9 +100,7 @@ class EmployeesController < ApplicationController
   end
   
   def create_lunch
-    
-    
-    params[:lunch_ids].each do |new_lunch| 
+   params[:lunch_ids].each do |new_lunch| 
        lunch = LunchList.new 
        lunch.employee_id = params[:id]
        lunch.given_lunch_id = new_lunch
@@ -112,5 +110,15 @@ class EmployeesController < ApplicationController
     flash[:notice] = 'Lunches were successfully updated.'
     redirect_to :action => "overview"  
   end  
+  
+  def overview_per_month
+    @employee = Employee.find(params[:id])
+    @lunches_per_month = Employee.find(params[:id]).given_lunches.group_by { |lunch| lunch.date_of_lunch.strftime("%B") }
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @lunches_per_month }
+    end
+  end
   
 end
