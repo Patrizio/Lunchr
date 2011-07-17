@@ -4,7 +4,12 @@
 $(function()
 {
 	$('.turn-me-into-datepicker')
-		.datePicker({inline:true, dateFormat: 'yy-mm-dd'})
+		.datePicker({
+			inline:true, 
+			dateFormat: 'yy-mm-dd',
+			startDate: new Date(2011, 1 - 1, 1),
+			endDate:new Date(2011, 12 - 1, 31),
+		})
 		.bind(
 			'dateSelected',
 			function(e, selectedDate, $td)
