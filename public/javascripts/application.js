@@ -4,7 +4,7 @@
 
 
 $(document).ready(function() {
-  	$('input').change(function () {
+  	$('#display-inline-block input').change(function () {
 	    if ($(this).attr("checked")) {
 	        //do the stuff that you would do when 'checked'
 			$(this).parent().parent().css('background-color', 'lightyellow');
