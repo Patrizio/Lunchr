@@ -1,29 +1,24 @@
-<h1>Listing given_lunches</h1>
+<h1>Overview given_lunches</h1>
 
 <table>
-  <tr>
-    <th>Date of lunch</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @given_lunch_months.each do |month, lunches| %>
 	<tr><td><h2><%= month %></h2></td></tr>
+  	<tr>
+	    <th>Date of lunch</th>
+	    <th>Price</th>
+		<th>Amount of Employees</th>
+	    
+	  </tr>
 	<% lunches.each do |given_lunch| %>
 	  <tr>
-	    <td><%= given_lunch.date_of_lunch %></td>
+	    <td><%= given_lunch.date_of_lunch.strftime("%A, %e %B") %></td>
 	    <td><%= given_lunch.price %></td>
-	    <td><%= link_to 'Show', given_lunch %></td>
-	    <td><%= link_to 'Edit', edit_given_lunch_path(given_lunch) %></td>
-	    <td><%= link_to 'Destroy', given_lunch, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= given_lunch.employees.length %>
 	  </tr>
 	<% end %>
+	<tr><td>Total this month: <%= lunches.length %></td></tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Given lunch', new_given_lunch_path %>
 
