@@ -3,7 +3,7 @@ class GivenLunchesController < ApplicationController
   # GET /given_lunches.xml
   def index
     @given_lunches = GivenLunch.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @given_lunches }
@@ -81,7 +81,9 @@ class GivenLunchesController < ApplicationController
     end
   end
   
-  
-  
+  def overview
+      # Group lunch dates by month
+      @given_lunch_months = GivenLunch.all.group_by { |lunch| lunch.date_of_lunch.strftime("%B") }
+  end
   
 end

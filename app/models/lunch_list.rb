@@ -8,4 +8,5 @@ class LunchList < ActiveRecord::Base
   validates_uniqueness_of :given_lunch_id, :scope => :employee_id, :message => "- has already been associated with this employee" 
   
   
+  
 end

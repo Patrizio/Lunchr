@@ -8,6 +8,10 @@ Lunch::Application.routes.draw do
     put :create_lunch, :on => :member
   end
   
+  resources :given_lunches do
+    get :overview, :on => :collection
+  end
+  
   resources :lunch_lists, :given_lunches, :employees
 
   # The priority is based upon order of creation:

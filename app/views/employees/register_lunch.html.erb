@@ -5,9 +5,7 @@
 
 
 <% @lunches = GivenLunch.this_week %>
-
 <% today = Time.now.strftime("%F") %>
-
 <% day_of_week = %w{zondag maandag dinsdag woensdag donderdag vrijdag zaterdag} %>
 
 <% form_tag create_lunch_employee_path, :method => :put do %>

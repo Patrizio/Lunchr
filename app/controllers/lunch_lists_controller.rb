@@ -3,7 +3,7 @@ class LunchListsController < ApplicationController
   # GET /lunch_lists.xml
   def index
     @lunch_lists = LunchList.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @lunch_lists }
