@@ -5,7 +5,7 @@ gem 'rails', '3.0.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 gem 'jquery-rails'
 
@@ -30,6 +30,7 @@ gem 'jquery-rails'
 # and rake tasks are available in development mode:
 
 group :development, :test do
+	gem 'sqlite3'
 	gem 'webrat'
 	gem 'factory_girl_rails'
 	gem "rspec-rails", "~> 2.6"
