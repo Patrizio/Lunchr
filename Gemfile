@@ -29,6 +29,10 @@ gem 'jquery-rails'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
 	gem 'sqlite3'
 	gem 'webrat'
