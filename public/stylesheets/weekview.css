@@ -1,3 +1,4 @@
+
 ul#display-inline-block,
 ul#display-inline-block li {
 	/* Setting a common base */
@@ -15,8 +16,6 @@ ul#display-inline-block li {
 ul#display-inline-block li.today {
 	background: lightblue;
 }
-
-
 
 #employees,
 #employees li {
@@ -40,8 +39,6 @@ ul#display-inline-block li.today {
 	text-decoration: none;
 	width: 100%;  
 }
-
-
 #employees a:hover {
 	text-align:left;  
 	padding: 0.5em;   
@@ -51,3 +48,33 @@ ul#display-inline-block li.today {
 	border: 1px solid black; 
 }
 
+
+
+#topmenu {
+	list-style-type:none; margin:0; padding:0; overflow:hidden;
+}
+#topmenu li {
+	float:left;
+}
+#topmenu li a {
+	display:block; text-decoration:none; 
+	text-align:center; 
+	padding:9px 17px 9px 17px; 
+	font-family:Arial; 
+	font-size:8pt; font-weight:bold; color:#ffffff; 
+	text-transform:uppercase; 
+	border-right:1px solid #607987; 
+	background-color:#7195aa; 
+	text-transform:uppercase; 
+	letter-spacing:.08em
+}
+#topmenu li a:hover {
+	background-color: #000; 
+	color: white
+}
+#topmenu li a.first {
+	border-left:0
+}
+#topmenu li a.last {
+	border-right:0
+}

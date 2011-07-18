@@ -10,7 +10,7 @@ class Employee < ActiveRecord::Base
   validates_length_of :employee_id, :is => 5
   validates_uniqueness_of :employee_id
   
-  
+  default_scope :order => 'lastname ASC'
   
   def fullname
     "#{lastname}, #{firstname} "

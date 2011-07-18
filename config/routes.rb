@@ -1,6 +1,6 @@
 Lunch::Application.routes.draw do
   
-  root :to => 'pages#home'
+  root :to => 'employees#overview'
 	
   resources :employees do
     get :overview, :on => :collection
@@ -14,6 +14,8 @@ Lunch::Application.routes.draw do
   end
   
   resources :lunch_lists, :given_lunches, :employees
+
+  get "pages/home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
