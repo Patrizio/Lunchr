@@ -8,12 +8,13 @@ $(document).ready(function() {
 	    if ($(this).attr("checked")) {
 	        //do the stuff that you would do when 'checked'
 			$(this).parent().parent().css('background-color', 'lightyellow');
+			$(this).parent().parent().css('color', '#000');
 	        return;
 	    }
 	    
 		// Uncheck today's day => lightblue
-		$(this).parent().parent().css('background-color', 'lightblue');
-	
+		$(this).parent().parent().css('background-color', '#7195aa');
+		$(this).parent().parent().css('color', '#fff');
 	});
 	
 	$(function()

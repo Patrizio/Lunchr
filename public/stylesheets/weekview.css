@@ -14,38 +14,38 @@ ul#display-inline-block li {
 }
 
 ul#display-inline-block li.today {
-	background: lightblue;
+	background: #7195aa;
+	color: #fff;
 }
 
 #employees,
 #employees li {
 	/* Setting a common base */
-	margin:0 0 0.25em 0;  
+	margin: 0 0 0.25em 0;  
 	padding: 0;
 }
 
 #employees li {
 	display: block;
-	width: 100%;
-	min-height: 50px;
-	font-size: large; 
+	padding:9px 17px 9px 5px; 
+	font-size:15pt; 
+	font-weight:bold; 
+	color: #ffffff; 
+	text-transform:uppercase; 
+	border-right:1px solid #607987; 
+	text-transform: uppercase; 
+	letter-spacing: .08em
 }
-
-
-* html #employees li a { width: 100%; }
 
 #employees a {
-	padding: 0.50em; 
+	padding: 0.25em;
 	text-decoration: none;
-	width: 100%;  
+	
 }
 #employees a:hover {
-	text-align:left;  
-	padding: 0.5em;   
-	width: 100%;  
-	background-color: #eee;  
-	color: #000;  
-	border: 1px solid black; 
+	color: #fff;
+	background-color: #7195aa; 
+
 }
 
 
@@ -60,17 +60,18 @@ ul#display-inline-block li.today {
 	display:block; text-decoration:none; 
 	text-align:center; 
 	padding:9px 17px 9px 17px; 
-	font-family:Arial; 
-	font-size:8pt; font-weight:bold; color:#ffffff; 
+	font-size:8pt; 
+	font-weight:bold; 
+	color:#ffffff; 
 	text-transform:uppercase; 
 	border-right:1px solid #607987; 
-	background-color:#7195aa; 
-	text-transform:uppercase; 
-	letter-spacing:.08em
+	background-color: #7195aa; 
+	text-transform: uppercase; 
+	letter-spacing: .08em
 }
 #topmenu li a:hover {
-	background-color: #000; 
-	color: white
+	background-color: #eee; 
+	color: #000;
 }
 #topmenu li a.first {
 	border-left:0
