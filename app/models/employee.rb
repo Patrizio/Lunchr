@@ -10,13 +10,10 @@ class Employee < ActiveRecord::Base
   validates_length_of :employee_id, :is => 5
   validates_uniqueness_of :employee_id
   
+  
+  
   def fullname
     "#{lastname}, #{firstname} "
-  end
-  
-  def lunches_eaten_this_week(start_date, end_date)
-    
-    
   end
   
   

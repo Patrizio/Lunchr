@@ -1,12 +1,13 @@
 
 
 <h1><%= @employee.fullname %></h1>
-<p>Selecteer de lunch:</p>
+<p>Selecteer je lunch:</p>
 
 <% @lunch = GivenLunch.today %>
 <% @lunch_today = @lunch.first unless @lunch.empty? %>
 
 <% notice = "Geen lunch bekend voor vandaag..." %>
+
 <% if @lunch.empty? %>
 	<p id="notice"><%= notice %></p>
 <% else %>
@@ -20,6 +21,6 @@
 			<div style="text-align: center;"><%= check_box_tag "lunch_ids[]", @lunch_today.id  %></div>
 			</li>
 		</ul>
-		<p><%= submit_tag "Bewaar lunch!" %></p>
+		<p><%= submit_tag "Bewaar lunch" %></p>
 	<% end %>
 <% end %>

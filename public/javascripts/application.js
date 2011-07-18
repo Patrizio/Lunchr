@@ -10,13 +10,10 @@ $(document).ready(function() {
 			$(this).parent().parent().css('background-color', 'lightyellow');
 	        return;
 	    }
-	    if ($(this).parent().parent().hasClass("today")) {
-			// Uncheck today's day => lightblue
-			$(this).parent().parent().css('background-color', 'lightblue');
-		} else {
-			// Uncheck any other day => lightgrey
-			$(this).parent().parent().css('background-color', 'lightgrey');
-		}
+	    
+		// Uncheck today's day => lightblue
+		$(this).parent().parent().css('background-color', 'lightblue');
+	
 	});
 	
 	$(function()

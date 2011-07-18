@@ -3,12 +3,12 @@
 <h1>Alle medewerkers:</h1>
 
 <% @employees_by_lastname.keys.sort.each do |letter| %>  
-
+<ul id="employees">
   <% for employee in @employees_by_lastname[letter] %>  
-    <div style="background: lightyellow; height: 40px;">
+    <li>
 		<%= link_to employee.fullname, register_lunch_employee_path(employee) %>
-		<br />
-		<%= link_to '(maandstaat)', overview_per_month_employee_path(employee) %>
-	</div>
+	</li>
   <% end %>  
 <% end %>
+	<br />
+	<% #link_to '(maandstaat)', overview_per_month_employee_path(employee) %>
