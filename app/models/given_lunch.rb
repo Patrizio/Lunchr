@@ -9,10 +9,8 @@ class GivenLunch < ActiveRecord::Base
   default_scope :order => 'date_of_lunch ASC'
   
   # get the days of the current week
-  today = Time.new
-  start_week = today.at_beginning_of_week.strftime("%F")
-  end_week = today.at_end_of_week.strftime("%F")
+  today = Time.new.strftime("%F")
   
-  scope :this_week, where("date_of_lunch >= ? and date_of_lunch <= ?", start_week, end_week)
+  scope :today, where("date_of_lunch = ? ", today)
   
 end

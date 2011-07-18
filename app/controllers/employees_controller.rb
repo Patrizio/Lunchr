@@ -92,7 +92,8 @@ class EmployeesController < ApplicationController
   end
   
   def register_lunch
-    @employee = Employee.find(params[:id])
+    @employee = Employee.find(params[:id])   
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @employees }

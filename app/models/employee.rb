@@ -14,4 +14,10 @@ class Employee < ActiveRecord::Base
     "#{lastname}, #{firstname} "
   end
   
+  def lunches_eaten_this_week(start_date, end_date)
+    
+    
+  end
+  
+  
 end

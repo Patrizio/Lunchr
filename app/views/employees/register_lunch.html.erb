@@ -1,30 +1,25 @@
 
 
 <h1><%= @employee.fullname %></h1>
-<p>Selecteer je lunch...</p>
+<p>Selecteer de lunch:</p>
 
+<% @lunch = GivenLunch.today %>
+<% @lunch_today = @lunch.first unless @lunch.empty? %>
 
-<% @lunches = GivenLunch.this_week %>
-
-<% today = Time.now.strftime("%F") %>
-
-<% days_of_week = %w{maandag dinsdag woensdag donderdag vrijdag zaterdag zondag} %>
-
-<% form_tag create_lunch_employee_path, :method => :put do %>
-	<ul id="display-inline-block">
-		<% @lunches.each do |lunch| %>
-		<% if lunch.date_of_lunch.to_s == today %>
+<% notice = "Geen lunch bekend voor vandaag..." %>
+<% if @lunch.empty? %>
+	<p id="notice"><%= notice %></p>
+<% else %>
+	<% form_tag create_lunch_employee_path, :method => :put do %>
+		<ul id="display-inline-block">
 			<li class="today">
-		<% else %>
-			<li class="day">
-		<% end %>
-		<strong><%= lunch.date_of_lunch.strftime("%A")  %></strong>
-		<br />
-		<%= lunch.date_of_lunch.strftime("%e %B, %G")  %>
-		<br /><br />
-		<div style="text-align: center;"><%= check_box_tag "lunch_ids[]", lunch.id  %></div>
-		</li>
-		<% end %>
-	</ul>
-	<p><%= submit_tag "Edit checked" %></p>
+			<strong><%= @lunch_today.date_of_lunch.strftime("%A")  %></strong>
+			<br />
+			<%= @lunch_today.date_of_lunch.strftime("%e %B, %G")  %>
+			<br /><br />
+			<div style="text-align: center;"><%= check_box_tag "lunch_ids[]", @lunch_today.id  %></div>
+			</li>
+		</ul>
+		<p><%= submit_tag "Bewaar lunch!" %></p>
+	<% end %>
 <% end %>
