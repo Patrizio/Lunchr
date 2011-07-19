@@ -1,5 +1,6 @@
 class Employee < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :employee_id
+  attr_accessible :lastname_dutch
   
   has_many :lunch_lists
   has_many :given_lunches, :through => :lunch_lists
@@ -12,9 +13,8 @@ class Employee < ActiveRecord::Base
     
   default_scope :order => 'lastname ASC'
   
-  def fullname
-    "#{lastname}, #{firstname} "
+  def full_name
+    "#{lastname}, #{firstname}"
   end
-  
   
 end

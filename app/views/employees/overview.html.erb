@@ -4,9 +4,11 @@
 <ul id="employees">
   <% for employee in @employees_by_lastname[letter] %>  
     <li>
-		<%= link_to employee.fullname, register_lunch_employee_path(employee) %>
+		<%= link_to "#{employee.full_name}", register_lunch_employee_path(employee) %>
 	</li>
   <% end %>  
 <% end %>
 	<br />
 	<% #link_to '(maandstaat)', overview_per_month_employee_path(employee) %>
+	
+
