@@ -1,12 +1,10 @@
 
+<% @lunch = GivenLunch.today %>
+<% @lunch_today = @lunch.first unless @lunch.empty? %>
+<% notice = "Geen lunch bekend voor vandaag." %>
 
 <h1>Hoi <%= @employee.firstname %>!</h1>
 <p>Selecteer lunch om te registreren:</p>
-
-<% @lunch = GivenLunch.today %>
-<% @lunch_today = @lunch.first unless @lunch.empty? %>
-
-<% notice = "Geen lunch bekend voor vandaag..." %>
 
 <% if @lunch.empty? %>
 	<p id="notice"><%= notice %></p>
